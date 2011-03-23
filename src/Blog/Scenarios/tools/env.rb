@@ -1,0 +1,6 @@
+require_relative 'prepara_bundle'
+require 'kconv'
+require 'date'
+require 'active_support/core_ext/hash/keys'
+require_relative '../features/support/hashinitializer'
+require_relative '../features/support/modelos'

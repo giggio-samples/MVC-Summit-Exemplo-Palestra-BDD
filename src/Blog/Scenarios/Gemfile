@@ -1,0 +1,7 @@
+source "http://rubygems.org"
+
+gem "rspec", :require => "spec"
+gem "cucumber"
+gem "capybara"
+gem "rspec-expectations"
+gem "activesupport"
