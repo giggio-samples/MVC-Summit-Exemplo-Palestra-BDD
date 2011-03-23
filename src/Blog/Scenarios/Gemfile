@@ -5,3 +5,5 @@ gem "cucumber"
 gem "capybara"
 gem "rspec-expectations"
 gem "activesupport"
+gem "win32-process"
+gem "sys-proctable", :platforms => :mswin
