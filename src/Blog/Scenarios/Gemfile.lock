@@ -15,6 +15,7 @@ GEM
     celerity (0.8.8)
     childprocess (0.1.8)
       ffi (~> 1.0.6)
+    configuration (1.2.0)
     cucumber (0.10.2)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.2)
@@ -29,6 +30,9 @@ GEM
       json (>= 1.4.6)
     json (1.5.1-x86-mingw32)
     json_pure (1.5.1)
+    launchy (0.4.0)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     mime-types (1.16)
     nokogiri (1.4.4.1-x86-mingw32)
     rack (1.2.2)
@@ -68,6 +72,7 @@ DEPENDENCIES
   activesupport
   capybara
   cucumber
+  launchy
   rspec
   rspec-expectations
   sys-proctable

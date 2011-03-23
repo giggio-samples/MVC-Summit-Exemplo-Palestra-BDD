@@ -97,6 +97,6 @@ Então /^(?:|eu )devo ver o título "([^"]*)"$/ do |titulo|
   page.find(:css, 'title').text.should == titulo
 end
 
-Então /^me mostra a página$/ do
+Então /^(?:|me )mostra a página$/ do
   save_and_open_page
 end

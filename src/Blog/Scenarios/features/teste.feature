@@ -9,3 +9,4 @@ Funcionalidade: Testar o cucumber
     E eu preencho "q" com "Giovanni Bassi"
     Quando eu clico em "sb_form_go"
     Então eu devo ver "Giovanni Bassi"
+    Então me mostra a página
