@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-Dado /^(que )?eu estou na página (.*)$/ do |que, pagina|
+Dado /^(?:|que )eu estou na página (.*)$/ do |pagina|
 	visit Endereco.para(pagina)
 end
 
@@ -92,6 +92,11 @@ end
 Então /^eu não devo ver o botão "([^\"]*)"$/ do |botao|
   page.has_button?(botao).should be false
 end
-When /^eu devo ver o título "([^"]*)"$/ do |titulo|
-  page.has_title titulo
+
+Então /^(?:|eu )devo ver o título "([^"]*)"$/ do |titulo|
+  page.find(:css, 'title').text.should == titulo
+end
+
+Então /^me mostra a página$/ do
+  save_and_open_page
 end
