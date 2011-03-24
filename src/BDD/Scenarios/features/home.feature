@@ -9,4 +9,4 @@ Funcionalidade: Exibição da home
 
   Cenário: Exibindo titulo
     Quando eu estou na página raiz
-    Então eu devo ver o título "Blog MVC Summit"
+    Então eu devo ver o título "Compra coletiva"
