@@ -22,15 +22,15 @@ Então /^não fico logado$/ do
 	Capybara.current_session.driver.browser.manage.cookie_named(".ASPXAUTH").should be_nil
 end
 Dado /^que não há usuários cadastrados$/ do
-  server = SqlServer.new
+  server = SqlServer.obter_aberto
   server.open
   server.execute('Delete from aspnet_UsersInRoles')
   server.execute('Delete from aspnet_Membership')
   server.execute('Delete from aspnet_Users')
   server.close
 end
-Então /^o usuário "([^\"]*)" existe com email "([^\"]*)"$/ do |usuario, email|
-  server = SqlServer.new
+Então /^o usuário "([^"]*)" existe com email "([^"]*)"$/ do |usuario, email|
+  server = SqlServer.obter_aberto
   server.open
   consulta_user = server.query("select * from aspnet_Users where LoweredUserName = '#{usuario.downcase}'")
   consulta_user.length.should == 1

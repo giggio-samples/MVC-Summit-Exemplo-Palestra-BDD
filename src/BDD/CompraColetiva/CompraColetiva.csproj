@@ -34,6 +34,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ErikEJ.SqlCeMembership">
+      <HintPath>..\packages\ErikEJ.SqlCeMembership.2.0.0.4\lib\ErikEJ.SqlCeMembership.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\SqlServerCompact.4.0.8482.1\lib\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.WebPages" />
     <Reference Include="System.Web.Helpers" />
@@ -81,6 +88,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\DB.sdf" />
     <Content Include="Content\images\background_footer.jpg" />
     <Content Include="Content\images\background_header.jpg" />
     <Content Include="Content\images\background_social_networks.jpg" />
@@ -106,6 +114,7 @@
     <Content Include="Content\themes\base1\images\ui-icons_454545_256x240.png" />
     <Content Include="Content\themes\base1\images\ui-icons_888888_256x240.png" />
     <Content Include="Content\themes\base1\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="readme.SqlCeMembership.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -201,6 +210,9 @@
   </ProjectExtensions>
   <PropertyGroup>
     <PostBuildEvent>
-    </PostBuildEvent>
+if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+xcopy /s /y "$(SolutionDir)packages\SqlServerCompact.4.0.8482.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+xcopy /s /y "$(SolutionDir)packages\SqlServerCompact.4.0.8482.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
   </PropertyGroup>
 </Project>
