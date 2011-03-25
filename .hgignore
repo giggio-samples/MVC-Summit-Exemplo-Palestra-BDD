@@ -49,3 +49,4 @@ aspnetdb_log.ldf
 chaves.rb
 .bundle\
 capybara-*.html
+DB.sdf
