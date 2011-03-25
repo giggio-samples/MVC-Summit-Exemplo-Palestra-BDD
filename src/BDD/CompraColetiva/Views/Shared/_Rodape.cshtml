@@ -1,0 +1,32 @@
+﻿<div class="social_network" style="margin-left:875px;">
+  <p>compartilhe</p>
+  @Html.ImageComLink("icons/orkut.png", "http://www.orkut.com.br/", new { target = "_blank" })
+  @Html.ImageComLink("icons/facebook.png", "http://www.facebook.com/", new { target = "_blank" })
+  @Html.ImageComLink("icons/twitter.png", "http://www.twitter.com/lambdatres", new { target = "_blank" })
+</div>
+<div id="footer">
+  <div class="inline boxes">
+    <div class="title">Sobre a Lambda3</div>
+    <p><a href="http://www.twitter.com/lambdatres">Twitter</a></p>
+    <p><a href="http://www.blog.lambda3.com.br">Blog</a></p>
+    <p><a href="http://www.scrumdev.com.br/">Scrum</a></p>
+  </div>
+  <div class="inline boxes">
+    <div class="title">Participe</div>
+    <p><a href="http://www.twitter.com/lambdatres">Twitter</a></p>
+    <p><a href="http://www.facebook.com/">Facebook</a></p>
+    <p><a href="http://www.orkut.com.br/">Orkut</a></p>
+  </div>
+  <div class="inline boxes">
+    <div class="title">Conheça</div>
+    <p>@Html.ActionLink("Entre em contato", MVC.Home.Contato())</p>
+    <p>@Html.ActionLink("Termos de uso", MVC.Home.Termos())</p>
+    <p>@Html.ActionLink("Sobre", MVC.Home.About())</p>
+  </div>
+  <div class="inline boxes">
+    <div class="title">Explore</div>
+    <p>@Html.ActionLink("Notícias", MVC.Home.Noticias())</p>
+    <p>@Html.ActionLink("FAQ", MVC.Home.FAQ())</p>
+  </div>
+  @Html.Image("lambda3.png", new { Class = "logo" })
+</div>

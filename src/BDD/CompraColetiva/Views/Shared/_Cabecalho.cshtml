@@ -1,0 +1,30 @@
+﻿@using System.Linq
+<header class="main">
+  <p class="devise-welcome">
+    @ViewBag.Usuario
+  </p>
+  <ul class="user_menu">
+    @if (Request.IsAuthenticated)
+    { 
+        <li>@Html.ActionLink("Ofertas", MVC.Usuario.Ofertas())</li>
+        <li>@Html.ActionLink("Cidades", MVC.Usuario.Cidades())</li>
+        <li>@Html.ActionLink("Empresas", MVC.Usuario.Empresas())</li>
+        <li>@Html.ActionLink("Emails", MVC.Usuario.Emails())</li>
+    }
+  </ul>
+  @if (ViewBag.Cidades != null && ViewBag.Cidades.Count > 0)
+  { 
+      <div id="select_cities">
+      @using(Html.BeginForm("SelecionaCidade", "Home")){
+            @Html.DropDownList("cidade", new SelectList(ViewBag.Cidades, "Id", "Nome", ViewBag.CidadeSelecionada))
+        }
+      </div>
+  }
+  <div class="header">
+    <h2>Receba as próximas promoções</h2>
+    <h5>Ofertas imbatíveis em restaurantes, bares ou eventos na sua cidade</h5>
+    @{Html.Render_Interessados();}
+
+
+  </div>
+</header>

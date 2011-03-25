@@ -1,6 +1,38 @@
 ﻿@{
-    ViewBag.Title = "Compra coletiva";
+    ViewBag.Title = "Home";
 }
 
-<h2>Index</h2>
+<div id="divulgation">
+  <div class="title">
+    <h3>Ofertas em destaque no Compra Coletiva:</h3><br/><br/>
+  </div>
+  <div align="center">
+    @if (ViewBag.Ofertas != null && ViewBag.Ofertas.Count > 0)    {
+        foreach (Oferta oferta in ViewBag.Ofertas)
+        {         
+        <div class="business inline">@Html.Image(oferta.UrlImagem)
+          <div class="collective"><br/>@oferta.NomeEmpresa <br/>[@oferta.ProdutoEmOferta]</div>
+          <div class="offer_sample">
+            <div class="inline">
+              <h3>De @oferta.ValorOriginal.ToString("#,##0.00")</h3><br/>
+              <p>Por R$</p>
+            </div>
+            <div class="inline">
+              <span>@oferta.ValorComDesconto.ToString("#,##0.00")</span>
+            </div><br/><br/>
+            <h3>@oferta.PercentualDeDesconto% de desconto.</h3>
+          </div>
+        </div>
+        <div class="inline border"></div>
+        }
+    }
+    else
+    { 
+        <h3>
+        Não há ofertas.
+        </h3>
+        <div>&nbsp;</div>
+    }
+  </div>
+</div>
 

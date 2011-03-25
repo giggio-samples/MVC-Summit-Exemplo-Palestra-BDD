@@ -1,0 +1,6 @@
+﻿<div id="prospect_create" class="inline">
+      @using(Html.BeginForm("Interessados", "Home", FormMethod.Post, new { Class = "form-prospects" })){
+            @Html.TextBox("email", "Preencha com seu e-mail", new { size = "65", Class = "required email" })
+            <input type="submit" value="ofertas por email" class="button inline" />
+        }
+</div>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{acb5f3f2-6fdc-4090-be0f-8cfe271719c3}</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>
+    </StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <AssemblyName>Scenarios1</AssemblyName>
+    <Name>Scenarios1</Name>
+    <RootNamespace>Scenarios1</RootNamespace>
+    <InterpreterPath>C:\Users\Giovanni\.pik\rubies\Ruby192-mvcsummitblog\bin\ruby.exe</InterpreterPath>
+    <IsWindowsApplication>False</IsWindowsApplication>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include=".bundle\config" />
+    <None Include=".idea\dictionaries\Giovanni.xml" />
+    <None Include=".idea\encodings.xml" />
+    <None Include=".idea\inspectionProfiles\profiles_settings.xml" />
+    <None Include=".idea\inspectionProfiles\Project_Default.xml" />
+    <None Include=".idea\misc.xml" />
+    <None Include=".idea\modules.xml" />
+    <None Include=".idea\Scenarios.iml" />
+    <None Include=".idea\vcs.xml" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.idea\workspace.xml~" />
+    <None Include="bin\autospec" />
+    <None Include="bin\cdiff" />
+    <None Include="bin\cucumber" />
+    <None Include="bin\cucumber.bat" />
+    <None Include="bin\decolor" />
+    <None Include="bin\edit_json.rb" />
+    <None Include="bin\htmldiff" />
+    <None Include="bin\launchy" />
+    <None Include="bin\ldiff" />
+    <None Include="bin\nokogiri" />
+    <None Include="bin\prettify_json.rb" />
+    <None Include="bin\rackup" />
+    <None Include="bin\rake" />
+    <None Include="bin\restclient" />
+    <None Include="bin\rspec" />
+    <None Include="bin\run_celerity_server.rb" />
+    <None Include="capybara-20110324184702.html" />
+    <None Include="capybara-20110324190728.html" />
+    <None Include="features\home.feature" />
+    <None Include="features\step_definitions\autenticacao_steps.rb.rb" />
+    <None Include="features\step_definitions\web_steps.rb" />
+    <None Include="features\support\endereco.rb" />
+    <None Include="features\support\env.rb" />
+    <None Include="features\support\hashinitializer.rb" />
+    <None Include="features\support\modelos.rb" />
+    <None Include="features\teste.feature" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.bundle" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.idea" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.idea\dictionaries" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.idea\inspectionProfiles" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\bin" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features\step_definitions" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features\support" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\specs" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\tools" />
+    <None Include="Gemfile" />
+    <None Include="Gemfile.lock" />
+    <None Include="Program.rb" />
+    <None Include="specs\paths_spec.rb" />
+    <None Include="specs\spec_helper.rb" />
+    <None Include="specs\teste_spec.rb" />
+    <None Include="startserver.cmd" />
+    <None Include="tools\env.rb" />
+    <None Include="tools\prepara_bundle.rb" />
+  </ItemGroup>
+</Project>
