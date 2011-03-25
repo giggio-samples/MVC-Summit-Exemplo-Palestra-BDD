@@ -54,7 +54,8 @@ class SqlServer
     end
 
     @@arq_db = File.expand_path('../../../../CompraColetiva/App_Data/DB.sdf', __FILE__) 
-    @@arq_db_template = File.expand_path('../../../../CompraColetiva/App_Data/DB_Template.sdf', __FILE__)
+    @@arq_db_blank = File.expand_path('../../../../CompraColetiva/App_Data/blank_db.sdf', __FILE__)
+    @@schema = File.expand_path('../../../../CompraColetiva/App_Data/schema.sqlce', __FILE__)
 
     class << self
 
@@ -66,7 +67,21 @@ class SqlServer
       end
       def prerarar_schema
         File.delete @@arq_db if File.file? @@arq_db
-        FileUtils.cp @@arq_db_template, @@arq_db
+        FileUtils.cp @@arq_db_blank, @@arq_db
+
+        content = File.read(@@schema)
+        statements = content.split 'GO'
+        server = obter_aberto
+        statements.each do  |statement|
+          next if statement.strip.empty?
+          begin
+            server.execute statement
+          rescue Exception => exception
+            warn "exception:\n#{exception}\nStatement:\n#{statement}"
+            raise
+          end
+        end
+
       end
     end
 

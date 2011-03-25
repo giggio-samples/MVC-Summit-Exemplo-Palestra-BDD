@@ -1,0 +1,91 @@
+CREATE TABLE [aspnet_Applications] (
+  [ApplicationName] nvarchar(256) NOT NULL
+, [LoweredApplicationName] nvarchar(256) NOT NULL
+, [ApplicationId] uniqueidentifier NOT NULL DEFAULT (newid())
+, [Description] nvarchar(256) NULL
+);
+GO
+CREATE TABLE [aspnet_Membership] (
+  [ApplicationId] uniqueidentifier NOT NULL
+, [UserId] uniqueidentifier NOT NULL
+, [Password] nvarchar(128) NOT NULL
+, [PasswordFormat] int NOT NULL DEFAULT ((0))
+, [PasswordSalt] nvarchar(128) NOT NULL
+, [MobilePIN] nvarchar(16) NULL
+, [Email] nvarchar(256) NULL
+, [LoweredEmail] nvarchar(256) NULL
+, [PasswordQuestion] nvarchar(256) NULL
+, [PasswordAnswer] nvarchar(128) NULL
+, [IsApproved] bit NOT NULL
+, [IsLockedOut] bit NOT NULL
+, [CreateDate] datetime NOT NULL
+, [LastLoginDate] datetime NOT NULL
+, [LastPasswordChangedDate] datetime NOT NULL
+, [LastLockoutDate] datetime NOT NULL
+, [FailedPasswordAttemptCount] int NOT NULL
+, [FailedPasswordAttemptWindowStart] datetime NOT NULL
+, [FailedPasswordAnswerAttemptCount] int NOT NULL
+, [FailedPasswordAnswerAttemptWindowStart] datetime NOT NULL
+, [Comment] ntext NULL
+);
+GO
+CREATE TABLE [aspnet_Roles] (
+  [ApplicationId] uniqueidentifier NOT NULL
+, [RoleId] uniqueidentifier NOT NULL DEFAULT (newid())
+, [RoleName] nvarchar(256) NOT NULL
+, [LoweredRoleName] nvarchar(256) NOT NULL
+, [Description] nvarchar(256) NULL
+);
+GO
+CREATE TABLE [aspnet_Users] (
+  [ApplicationId] uniqueidentifier NOT NULL
+, [UserId] uniqueidentifier NOT NULL DEFAULT (newid())
+, [UserName] nvarchar(256) NOT NULL
+, [LoweredUserName] nvarchar(256) NOT NULL
+, [MobileAlias] nvarchar(16) NULL DEFAULT (NULL)
+, [IsAnonymous] bit NOT NULL DEFAULT ((0))
+, [LastActivityDate] datetime NOT NULL
+);
+GO
+CREATE TABLE [aspnet_UsersInRoles] (
+  [UserId] uniqueidentifier NOT NULL
+, [RoleId] uniqueidentifier NOT NULL
+);
+GO
+ALTER TABLE [aspnet_Applications] ADD CONSTRAINT [PK__aspnet_Applications__000000000000001B] PRIMARY KEY ([ApplicationId]);
+GO
+ALTER TABLE [aspnet_Roles] ADD CONSTRAINT [PK__aspnet_Roles__0000000000000091] PRIMARY KEY ([RoleId]);
+GO
+ALTER TABLE [aspnet_Users] ADD CONSTRAINT [PK__aspnet_Users__000000000000003E] PRIMARY KEY ([UserId]);
+GO
+ALTER TABLE [aspnet_UsersInRoles] ADD CONSTRAINT [PK__aspnet_U__AF2760AD3C69FB99] PRIMARY KEY ([RoleId],[UserId]);
+GO
+CREATE INDEX [aspnet_Applications_Index] ON [aspnet_Applications] ([LoweredApplicationName] ASC);
+GO
+CREATE UNIQUE INDEX [UQ__aspnet_A__3091033107020F21] ON [aspnet_Applications] ([ApplicationName] ASC);
+GO
+CREATE INDEX [aspnet_Membership_index] ON [aspnet_Membership] ([ApplicationId] ASC,[LoweredEmail] ASC);
+GO
+CREATE UNIQUE INDEX [aspnet_Roles_index1] ON [aspnet_Roles] ([ApplicationId] ASC,[LoweredRoleName] ASC);
+GO
+CREATE UNIQUE INDEX [aspnet_Users_Index] ON [aspnet_Users] ([ApplicationId] ASC,[LoweredUserName] ASC);
+GO
+CREATE INDEX [aspnet_Users_Index2] ON [aspnet_Users] ([ApplicationId] ASC,[LastActivityDate] ASC);
+GO
+CREATE INDEX [aspnet_UsersInRoles_index] ON [aspnet_UsersInRoles] ([RoleId] ASC);
+GO
+ALTER TABLE [aspnet_Membership] ADD CONSTRAINT [FK__aspnet_Me__Appli__21B6055D] FOREIGN KEY ([ApplicationId]) REFERENCES [aspnet_Applications]([ApplicationId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [aspnet_Membership] ADD CONSTRAINT [FK__aspnet_Me__UserI__22AA2996] FOREIGN KEY ([UserId]) REFERENCES [aspnet_Users]([UserId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [aspnet_Roles] ADD CONSTRAINT [FK__aspnet_Ro__Appli__38996AB5] FOREIGN KEY ([ApplicationId]) REFERENCES [aspnet_Applications]([ApplicationId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [aspnet_Users] ADD CONSTRAINT [FK__aspnet_Us__Appli__0DAF0CB0] FOREIGN KEY ([ApplicationId]) REFERENCES [aspnet_Applications]([ApplicationId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [aspnet_UsersInRoles] ADD CONSTRAINT [FK__aspnet_Us__RoleI__3F466844] FOREIGN KEY ([RoleId]) REFERENCES [aspnet_Roles]([RoleId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+ALTER TABLE [aspnet_UsersInRoles] ADD CONSTRAINT [FK__aspnet_Us__UserI__3E52440B] FOREIGN KEY ([UserId]) REFERENCES [aspnet_Users]([UserId]) ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+INSERT INTO [aspnet_Applications] ([ApplicationName],[LoweredApplicationName],[ApplicationId],[Description]) VALUES (N'/',N'/','c2179066-efa5-4c9f-a53a-5390a7c30927',null);
+GO

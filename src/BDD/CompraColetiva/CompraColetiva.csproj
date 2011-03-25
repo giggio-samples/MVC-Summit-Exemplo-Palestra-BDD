@@ -88,8 +88,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\blank_db.sdf" />
     <Content Include="App_Data\DB.sdf" />
-    <Content Include="App_Data\DB_Template.sdf" />
     <Content Include="Content\images\background_footer.jpg" />
     <Content Include="Content\images\background_header.jpg" />
     <Content Include="Content\images\background_social_networks.jpg" />
@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="App_Data\schema.sqlce" />
     <None Include="T4MVC.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>T4MVC.cs</LastGenOutput>
