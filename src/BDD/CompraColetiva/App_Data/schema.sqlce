@@ -52,6 +52,15 @@ CREATE TABLE [aspnet_UsersInRoles] (
 , [RoleId] uniqueidentifier NOT NULL
 );
 GO
+CREATE TABLE [Oferta] (
+  [Id] int NOT NULL
+, [NomeEmpresa] nvarchar (500) NOT NULL
+, [ProdutoEmOferta] nvarchar (500) NOT NULL
+, [UrlImagem] nvarchar (500) NOT NULL
+, [ValorComDesconto] money NOT NULL
+, [ValorOriginal] money NOT NULL
+);
+GO
 ALTER TABLE [aspnet_Applications] ADD CONSTRAINT [PK__aspnet_Applications__000000000000001B] PRIMARY KEY ([ApplicationId]);
 GO
 ALTER TABLE [aspnet_Roles] ADD CONSTRAINT [PK__aspnet_Roles__0000000000000091] PRIMARY KEY ([RoleId]);
@@ -59,6 +68,8 @@ GO
 ALTER TABLE [aspnet_Users] ADD CONSTRAINT [PK__aspnet_Users__000000000000003E] PRIMARY KEY ([UserId]);
 GO
 ALTER TABLE [aspnet_UsersInRoles] ADD CONSTRAINT [PK__aspnet_U__AF2760AD3C69FB99] PRIMARY KEY ([RoleId],[UserId]);
+GO
+ALTER TABLE [Oferta] ADD CONSTRAINT [PK_Oferta] PRIMARY KEY ([Id]);
 GO
 CREATE INDEX [aspnet_Applications_Index] ON [aspnet_Applications] ([LoweredApplicationName] ASC);
 GO

@@ -79,6 +79,7 @@
     <None Include="features\home.feature" />
     <None Include="features\step_definitions\autenticacao_steps.rb.rb" />
     <None Include="features\step_definitions\autenticacao_steps.rb.rb" />
+    <None Include="features\step_definitions\ofertas_steps.rb.rb" />
     <None Include="features\step_definitions\web_steps.rb" />
     <None Include="features\step_definitions\web_steps.rb" />
     <None Include="features\support\endereco.rb" />
@@ -89,6 +90,7 @@
     <None Include="features\support\hashinitializer.rb" />
     <None Include="features\support\modelos.rb" />
     <None Include="features\support\modelos.rb" />
+    <None Include="features\support\model\modelo_simples.rb" />
     <None Include="features\support\sql_server.rb" />
     <None Include="features\support\sql_server.rb" />
     <None Include="features\teste.feature" />
@@ -129,6 +131,7 @@
     <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features" />
     <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features\step_definitions" />
     <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features\support" />
+    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\features\support\model" />
     <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\specs" />
     <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\tools" />
     <None Include="Gemfile" />

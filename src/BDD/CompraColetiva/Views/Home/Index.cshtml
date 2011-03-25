@@ -6,7 +6,7 @@
   <div class="title">
     <h3>Ofertas em destaque no Compra Coletiva:</h3><br/><br/>
   </div>
-  <div align="center">
+  <div align="center" id="ofertas">
     @if (ViewBag.Ofertas != null && ViewBag.Ofertas.Count > 0)    {
         foreach (Oferta oferta in ViewBag.Ofertas)
         {         
@@ -20,7 +20,7 @@
             <div class="inline">
               <span>@oferta.ValorComDesconto.ToString("#,##0.00")</span>
             </div><br/><br/>
-            <h3>@oferta.PercentualDeDesconto% de desconto.</h3>
+            <h3>@oferta.PercentualDeDesconto% de desconto</h3>
           </div>
         </div>
         <div class="inline border"></div>

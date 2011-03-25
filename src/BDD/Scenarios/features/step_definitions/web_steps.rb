@@ -15,8 +15,10 @@ Dado /^que eu estou na url (.*)$/ do |url|
 	visit url
 end
 
-Então /^eu devo ver "([^"]*)"$/ do |texto|
-  page.should have_content(texto)
+Então /^eu devo ver "([^"]*)"(?: dentro de "([^"]*)")?$/ do |texto, selector|
+  with_scope(selector) do
+    page.should have_content(texto)
+  end
 end
 
 Então /^eu não devo ver "([^"]*)"$/ do |texto|

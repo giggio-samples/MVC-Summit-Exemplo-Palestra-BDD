@@ -41,11 +41,16 @@ class SqlServer
     end
 
     def execute(sql)
-        @connection.Execute(sql)
+        begin
+            @connection.Execute(sql)
+        rescue Exception => exception
+            warn "exception:\n#{exception}\nStatement:\n#{sql}"
+            raise
+        end
     end
 
     def execute_all(sqls)
-      sqls.each { |sql| @connection.Execute(sql) }
+      sqls.each { |sql| execute(sql) }
     end
 
 
@@ -74,12 +79,7 @@ class SqlServer
         server = obter_aberto
         statements.each do  |statement|
           next if statement.strip.empty?
-          begin
-            server.execute statement
-          rescue Exception => exception
-            warn "exception:\n#{exception}\nStatement:\n#{statement}"
-            raise
-          end
+          server.execute statement
         end
 
       end
