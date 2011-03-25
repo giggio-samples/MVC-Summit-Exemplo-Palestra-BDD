@@ -7,17 +7,20 @@
     @if (Request.IsAuthenticated)
     { 
         <li>@Html.ActionLink("Ofertas", MVC.Usuario.Ofertas())</li>
-        <li>@Html.ActionLink("Cidades", MVC.Usuario.Cidades())</li>
-        <li>@Html.ActionLink("Empresas", MVC.Usuario.Empresas())</li>
-        <li>@Html.ActionLink("Emails", MVC.Usuario.Emails())</li>
+        <li>@Html.ActionLink("Empresas", MVC.Usuario.UltimasCompras())</li>
+        <li>@Html.ActionLink("Configurações", MVC.Usuario.Configuracoes())</li>
+    }
+    else { 
+        <li>@Html.ActionLink("Registre-se", MVC.Account.Register())</li>
     }
   </ul>
   @if (ViewBag.Cidades != null && ViewBag.Cidades.Count > 0)
   { 
       <div id="select_cities">
-      @using(Html.BeginForm("SelecionaCidade", "Home")){
+      @using (Html.BeginForm("SelecionaCidade", "Home"))
+      {
             @Html.DropDownList("cidade", new SelectList(ViewBag.Cidades, "Id", "Nome", ViewBag.CidadeSelecionada))
-        }
+      }
       </div>
   }
   <div class="header">

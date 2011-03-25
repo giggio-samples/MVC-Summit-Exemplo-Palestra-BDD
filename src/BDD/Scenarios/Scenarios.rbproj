@@ -34,7 +34,8 @@
     <None Include=".idea\modules.xml" />
     <None Include=".idea\Scenarios.iml" />
     <None Include=".idea\vcs.xml" />
-    <None Include="G:\proj\src\Publicacoes\Palestras\MVCSummit\2011\BDD\src\BDD\Scenarios\.idea\workspace.xml~" />
+    <None Include=".idea\workspace.xml" />
+    <None Include="features\usuario.feature" />
     <None Include="bin\autospec" />
     <None Include="bin\cdiff" />
     <None Include="bin\cucumber" />

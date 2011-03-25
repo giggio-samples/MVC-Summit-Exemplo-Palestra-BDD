@@ -23,6 +23,7 @@ using T4MVC;
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC {
+    public static CompraColetiva.Controllers.AccountController Account = new CompraColetiva.Controllers.T4MVC_AccountController();
     public static CompraColetiva.Controllers.HomeController Home = new CompraColetiva.Controllers.T4MVC_HomeController();
     public static CompraColetiva.Controllers.UsuarioController Usuario = new CompraColetiva.Controllers.T4MVC_UsuarioController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();
@@ -342,6 +343,13 @@ namespace Links {
             }
         
             public static readonly string lambda3_png = Url("lambda3.png");
+            [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+            public static class produtos {
+                private const string URLPATH = "~/Content/images/produtos";
+                public static string Url() { return T4MVCHelpers.ProcessVirtualPath(URLPATH); }
+                public static string Url(string fileName) { return T4MVCHelpers.ProcessVirtualPath(URLPATH + "/" + fileName); }
+            }
+        
         }
     
         public static readonly string Site_css = Url("Site.css");
@@ -406,6 +414,104 @@ static class T4MVCHelpers {
     }
 }
 
+
+namespace CompraColetiva.Controllers {
+    public partial class AccountController {
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public AccountController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected AccountController(Dummy d) { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected RedirectToRouteResult RedirectToAction(ActionResult result) {
+            var callInfo = result.GetT4MVCResult();
+            return RedirectToRoute(callInfo.RouteValueDictionary);
+        }
+
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public AccountController Actions { get { return MVC.Account; } }
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Area = "";
+        [GeneratedCode("T4MVC", "2.0")]
+        public readonly string Name = "Account";
+
+        static readonly ActionNamesClass s_actions = new ActionNamesClass();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionNamesClass ActionNames { get { return s_actions; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionNamesClass {
+            public readonly string LogOn = "LogOn";
+            public readonly string LogOff = "LogOff";
+            public readonly string Register = "Register";
+            public readonly string ChangePassword = "ChangePassword";
+            public readonly string ChangePasswordSuccess = "ChangePasswordSuccess";
+        }
+
+
+        static readonly ViewNames s_views = new ViewNames();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ViewNames Views { get { return s_views; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ViewNames {
+            public readonly string ChangePassword = "~/Views/Account/ChangePassword.cshtml";
+            public readonly string ChangePasswordSuccess = "~/Views/Account/ChangePasswordSuccess.cshtml";
+            public readonly string LogOn = "~/Views/Account/LogOn.cshtml";
+            public readonly string Register = "~/Views/Account/Register.cshtml";
+        }
+    }
+
+    [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+    public class T4MVC_AccountController: CompraColetiva.Controllers.AccountController {
+        public T4MVC_AccountController() : base(Dummy.Instance) { }
+
+        public override System.Web.Mvc.ActionResult LogOn() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOn);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult LogOn(CompraColetiva.Models.Entidades.LogOnModel model, string returnUrl) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOn);
+            callInfo.RouteValueDictionary.Add("model", model);
+            callInfo.RouteValueDictionary.Add("returnUrl", returnUrl);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult LogOff() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.LogOff);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Register() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Register);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Register(CompraColetiva.Models.Entidades.RegisterModel model) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Register);
+            callInfo.RouteValueDictionary.Add("model", model);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ChangePassword() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ChangePassword(CompraColetiva.Models.Entidades.ChangePasswordModel model) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePassword);
+            callInfo.RouteValueDictionary.Add("model", model);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult ChangePasswordSuccess() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ChangePasswordSuccess);
+            return callInfo;
+        }
+
+    }
+}
 
 namespace CompraColetiva.Controllers {
     public partial class HomeController {
@@ -518,9 +624,8 @@ namespace CompraColetiva.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string Ofertas = "Ofertas";
-            public readonly string Cidades = "Cidades";
-            public readonly string Empresas = "Empresas";
-            public readonly string Emails = "Emails";
+            public readonly string UltimasCompras = "UltimasCompras";
+            public readonly string Configuracoes = "Configuracoes";
         }
 
 
@@ -541,18 +646,13 @@ namespace CompraColetiva.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Cidades() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Cidades);
+        public override System.Web.Mvc.ActionResult UltimasCompras() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.UltimasCompras);
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult Empresas() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Empresas);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult Emails() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Emails);
+        public override System.Web.Mvc.ActionResult Configuracoes() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Configuracoes);
             return callInfo;
         }
 

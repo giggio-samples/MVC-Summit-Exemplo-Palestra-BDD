@@ -1,5 +1,12 @@
 # encoding: utf-8
 
+module WithinHelpers
+  def with_scope(locator)
+    locator ? within(locator) { yield } : yield
+  end
+end
+World(WithinHelpers)
+
 Dado /^(?:|que )eu estou na página (.*)$/ do |pagina|
 	visit Endereco.para(pagina)
 end
@@ -20,8 +27,10 @@ Então /^eu devo ver o botão "([^"]*)"$/ do |id_botao|
 	page.has_button?(id_botao).should be true
 end
 
-Então /^eu devo ver o link "([^"]*)"$/ do |texto|
-  page.should have_link(texto)
+Então /^eu devo ver o link "([^"]*)"(?: dentro de "([^"]*)")?$/ do |texto, selector|
+    with_scope(selector) do
+      page.should have_link(texto)
+    end
 end
 
 Então /^eu não devo ver o link "([^"]*)"$/ do |texto|

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace CompraColetiva.Controllers
 {
@@ -13,17 +9,12 @@ namespace CompraColetiva.Controllers
             return View();
         }
 
-        public virtual ActionResult Cidades()
+        public virtual ActionResult UltimasCompras()
         {
             return View();
         }
 
-        public virtual ActionResult Empresas()
-        {
-            return View();
-        }
-
-        public virtual ActionResult Emails()
+        public virtual ActionResult Configuracoes()
         {
             return View();
         }

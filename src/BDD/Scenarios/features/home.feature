@@ -1,7 +1,7 @@
 # language: pt
 Funcionalidade: Exibição da home
 	Enquanto visitante
-	Para ler o blog
+	Para ver o site
 	Eu gostaria de acessar a home page
 	
   Contexto:
