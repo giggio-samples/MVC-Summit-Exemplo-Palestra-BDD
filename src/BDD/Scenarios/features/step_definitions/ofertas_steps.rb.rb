@@ -7,7 +7,7 @@ Dado /^que há as seguintes ofertas:$/ do |dados|
   statements = []
   dados.hashes.each do |hash|
 		o = Oferta.new hash
-    statements << "INSERT INTO [Oferta] ([Id], [NomeEmpresa], [ProdutoEmOferta], [UrlImagem], [ValorComDesconto], [ValorOriginal]) VALUES (#{o.id}, '#{o.nome_empresa}', '#{o.produto_em_oferta}', '#{o.url_imagem}', #{o.valor_com_desconto}, #{o.valor_original})"
+    statements << "INSERT INTO [Ofertas] ([Id], [NomeEmpresa], [ProdutoEmOferta], [UrlImagem], [ValorComDesconto], [ValorOriginal]) VALUES (#{o.id}, '#{o.nome_empresa}', '#{o.produto_em_oferta}', '#{o.url_imagem}', #{o.valor_com_desconto}, #{o.valor_original})"
   end
   server.execute_all statements
   server.close

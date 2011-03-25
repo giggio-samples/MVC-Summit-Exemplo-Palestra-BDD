@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
-using CompraColetiva.Models.Entidades;
+using CompraColetiva.Models.DAO;
 
 namespace CompraColetiva.Controllers
 {
@@ -11,13 +8,7 @@ namespace CompraColetiva.Controllers
     {
         public virtual ActionResult Index()
         {
-            var ofertas = new List<Oferta>
-                              {
-                                  new Oferta{Id = 1, NomeEmpresa = "Sorveteria do Jorge", ProdutoEmOferta = "Sorvete de limão", UrlImagem = "produtos/sorvete.jpg", ValorComDesconto = 5, ValorOriginal = 12},
-                                  new Oferta{Id = 1, NomeEmpresa = "Sapataria do Alemão", ProdutoEmOferta = "Sapato de couro", UrlImagem = "produtos/sapato.jpg", ValorComDesconto = 92, ValorOriginal = 150},
-                                  new Oferta{Id = 1, NomeEmpresa = "Hardware bom", ProdutoEmOferta = "Mouse ArcTouch", UrlImagem = "produtos/mouse.jpg", ValorComDesconto = 100.10m, ValorOriginal = 65.45m},
-                                  new Oferta{Id = 1, NomeEmpresa = "Tailspin", ProdutoEmOferta = "Avião de papel", UrlImagem = "produtos/aviao.jpg", ValorComDesconto = 123.52m, ValorOriginal = 167.44m},
-                              };
+            var ofertas = new Entidades().Ofertas.ToList();
             ViewBag.Ofertas = ofertas;
             return View();
         }
