@@ -10,7 +10,7 @@
     @if (ViewBag.Ofertas != null && ViewBag.Ofertas.Count > 0)    {
         foreach (Oferta oferta in ViewBag.Ofertas)
         {         
-        <div class="business inline">@Html.Image(oferta.UrlImagem)
+        <div class="business inline">@Html.ImageComLink(oferta.UrlImagem, Url.Action("Exibir", "Ofertas", new { id = oferta.Slug }), null, new { id = oferta.Slug })
           <div class="collective"><br/>@oferta.NomeEmpresa <br/>[@oferta.ProdutoEmOferta]</div>
           <div class="offer_sample">
             <div class="inline">

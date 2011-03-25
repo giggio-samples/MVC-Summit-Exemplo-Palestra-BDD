@@ -53,6 +53,9 @@ class SqlServer
       sqls.each { |sql| execute(sql) }
     end
 
+    def clean_table(table_name)
+      execute("DELETE FROM #{table_name}")
+    end
 
     def close
         @connection.Close

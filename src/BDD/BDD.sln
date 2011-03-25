@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompraColetiva", "CompraCol
 EndProject
 Project("{B373B46A-B089-44D7-96CA-CD150D098BC8}") = "Scenarios", "Scenarios\Scenarios.rbproj", "{ACB5F3F2-6FDC-4090-BE0F-8CFE271719C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testes", "Testes\Testes.csproj", "{56A4D6A4-77AF-45BB-A5F3-F85812136370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,6 +20,10 @@ Global
 		{ACB5F3F2-6FDC-4090-BE0F-8CFE271719C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{ACB5F3F2-6FDC-4090-BE0F-8CFE271719C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACB5F3F2-6FDC-4090-BE0F-8CFE271719C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56A4D6A4-77AF-45BB-A5F3-F85812136370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56A4D6A4-77AF-45BB-A5F3-F85812136370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56A4D6A4-77AF-45BB-A5F3-F85812136370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56A4D6A4-77AF-45BB-A5F3-F85812136370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

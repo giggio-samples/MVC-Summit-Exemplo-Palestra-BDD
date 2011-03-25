@@ -66,6 +66,10 @@ Quando /^eu clico no link "([^"]*)"$/ do |botao|
   click_link(botao)
 end
 
+Quando /^eu clico na imagem "([^"]*)"$/ do |imagem|
+  page.find(:css, imagem).click()
+end
+
 Quando /^(?:|eu )clico em "([^"]*)"$/ do |botao|
 	click_button(botao)
 end

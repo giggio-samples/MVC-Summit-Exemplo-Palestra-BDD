@@ -4,6 +4,7 @@ require_relative '../support/sql_server'
 Dado /^que há as seguintes ofertas:$/ do |dados|
   # table is a |1|Sorveteria do Jorge|Sorvete de limão|produtos/sorvete.jpg|5|12|
   server = SqlServer.obter_aberto
+  server.clean_table "Ofertas"
   statements = []
   dados.hashes.each do |hash|
 		o = Oferta.new hash
