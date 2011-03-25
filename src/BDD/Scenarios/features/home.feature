@@ -9,4 +9,4 @@ Funcionalidade: Exibição da home
 
   Cenário: Exibindo titulo
     Quando eu estou na página raiz
-    Então eu devo ver o título "Compra coletiva"
+    Então eu devo ver o título "Lambda3 > Home"
