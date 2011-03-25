@@ -11,7 +11,11 @@
         <li>@Html.ActionLink("Configurações", MVC.Usuario.Configuracoes())</li>
     }
     else { 
-        <li>@Html.ActionLink("Registre-se", MVC.Account.Register())</li>
+        <text>
+        <li>@Html.ActionLink("Home", MVC.Home.Index())</li> |
+        <li>@Html.ActionLink("Registre-se", MVC.Account.Register())</li> |
+        <li>@Html.ActionLink("Logar", MVC.Account.LogOn())</li>
+        </text>
     }
   </ul>
   @if (ViewBag.Cidades != null && ViewBag.Cidades.Count > 0)

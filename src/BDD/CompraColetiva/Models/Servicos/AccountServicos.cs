@@ -49,7 +49,7 @@ namespace CompraColetiva.Models.Servicos
             if (String.IsNullOrEmpty(email)) throw new ArgumentException("Value cannot be null or empty.", "email");
 
             MembershipCreateStatus status;
-            _provider.CreateUser(userName, password, email, null, null, true, null, out status);
+            _provider.CreateUser(userName, password, email, "Pergunta para password answer", "Alguma resposta", true, null, out status);
             return status;
         }
 

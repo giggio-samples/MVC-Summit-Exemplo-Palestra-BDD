@@ -10,6 +10,8 @@ Funcionalidade: Comprando
     Dado que sou um usuário anonimo
     Quando eu estou na página raiz
     Então eu devo ver o link "Registre-se" dentro de ".user_menu"
+    Então eu devo ver o link "Logar" dentro de ".user_menu"
+    Então eu devo ver o link "Home" dentro de ".user_menu"
 
 
   @and
