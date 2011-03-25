@@ -36,3 +36,13 @@ Funcionalidade: Comprando
     Então eu devo ver o link "Ofertas" dentro de ".user_menu"
     E eu devo ver o link "Empresas" dentro de ".user_menu"
     E eu devo ver o link "Configurações" dentro de ".user_menu"
+    E eu devo ver o link "Sair" dentro de ".user_menu"
+
+  Cenário: Deslogando
+    Dado que há um usuário
+    E que sou um usuário logado
+    E eu estou na página raiz
+    Quando eu clico no link "Sair"
+    Então não fico logado
+
+    
