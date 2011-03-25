@@ -40,6 +40,10 @@ class SqlServer
         @data
     end
 
+    def execute(sql)
+        @connection.Execute(sql)
+    end
+
     def close
         @connection.Close
     end

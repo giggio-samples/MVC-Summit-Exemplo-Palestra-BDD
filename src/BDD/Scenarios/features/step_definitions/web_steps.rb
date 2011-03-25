@@ -64,7 +64,7 @@ Quando /^eu clico no link "([^"]*)"$/ do |botao|
   click_link(botao)
 end
 
-Quando /^eu clico em "([^"]*)"$/ do |botao|
+Quando /^(?:|eu )clico em "([^"]*)"$/ do |botao|
 	click_button(botao)
 end
 

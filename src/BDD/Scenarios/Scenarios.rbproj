@@ -70,6 +70,7 @@
     <None Include="features\support\env.rb" />
     <None Include="features\support\hashinitializer.rb" />
     <None Include="features\support\modelos.rb" />
+    <None Include="features\support\sql_server.rb" />
     <None Include="features\teste.feature" />
     <None Include="features\usuario.feature" />
     <None Include="bin\autospec" />
@@ -118,6 +119,7 @@
     <None Include="specs\paths_spec.rb" />
     <None Include="specs\spec_helper.rb" />
     <None Include="specs\spec_helper.rb" />
+    <None Include="specs\sql_server_spec.rb" />
     <None Include="specs\teste_spec.rb" />
     <None Include="specs\teste_spec.rb" />
     <None Include="startserver.cmd" />
