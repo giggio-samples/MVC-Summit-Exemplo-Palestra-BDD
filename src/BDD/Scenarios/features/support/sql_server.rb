@@ -1,4 +1,6 @@
 require 'win32ole'
+require 'fileutils'
+
 class SqlServer
     # This class manages database connection and queries
     attr_accessor :connection, :data, :fields, :database, :data_source, :connection_string
@@ -42,14 +44,30 @@ class SqlServer
         @connection.Execute(sql)
     end
 
+    def execute_all(sqls)
+      sqls.each { |sql| @connection.Execute(sql) }
+    end
+
+
     def close
         @connection.Close
     end
-    def self.obter_aberto
-      arq_db = File.expand_path('../../../../CompraColetiva/App_Data/DB.sdf', __FILE__).gsub('/', '\\')
-      connection_string = "Provider=Microsoft.SQLSERVER.CE.OLEDB.4.0;Data Source=#{arq_db}"
-      server = SqlServer.new connection_string
-      server.open
-      server
+
+    @@arq_db = File.expand_path('../../../../CompraColetiva/App_Data/DB.sdf', __FILE__) 
+    @@arq_db_template = File.expand_path('../../../../CompraColetiva/App_Data/DB_Template.sdf', __FILE__)
+
+    class << self
+
+      def obter_aberto
+        connection_string = "Provider=Microsoft.SQLSERVER.CE.OLEDB.4.0;Data Source=#{@@arq_db.gsub('/', '\\')}"
+        server = SqlServer.new connection_string
+        server.open
+        server
+      end
+      def prerarar_schema
+        File.delete @@arq_db if File.file? @@arq_db
+        FileUtils.cp @@arq_db_template, @@arq_db
+      end
     end
+
 end

@@ -7,6 +7,8 @@ require_relative 'hashinitializer'
 require_relative 'modelos'
 require 'win32/process'
 require "sys/proctable"
+require_relative '../support/sql_server'
+require 'fileutils'
 
 Capybara.default_driver = :selenium
 Capybara.app_host = 'http://localhost:42184'
@@ -29,6 +31,8 @@ if pid == 0
   pid = process.process_id
   criado = true
 end
+
+SqlServer.prerarar_schema
 
 at_exit do
   if criado

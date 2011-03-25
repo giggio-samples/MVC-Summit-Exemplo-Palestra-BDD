@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\DB.sdf" />
+    <Content Include="App_Data\DB_Template.sdf" />
     <Content Include="Content\images\background_footer.jpg" />
     <Content Include="Content\images\background_header.jpg" />
     <Content Include="Content\images\background_social_networks.jpg" />

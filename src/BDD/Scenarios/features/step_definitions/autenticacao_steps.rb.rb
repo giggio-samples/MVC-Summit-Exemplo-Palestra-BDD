@@ -23,7 +23,6 @@ Então /^não fico logado$/ do
 end
 Dado /^que não há usuários cadastrados$/ do
   server = SqlServer.obter_aberto
-  server.open
   server.execute('Delete from aspnet_UsersInRoles')
   server.execute('Delete from aspnet_Membership')
   server.execute('Delete from aspnet_Users')
@@ -31,7 +30,6 @@ Dado /^que não há usuários cadastrados$/ do
 end
 Então /^o usuário "([^"]*)" existe com email "([^"]*)"$/ do |usuario, email|
   server = SqlServer.obter_aberto
-  server.open
   consulta_user = server.query("select * from aspnet_Users where LoweredUserName = '#{usuario.downcase}'")
   consulta_user.length.should == 1
   user_id = consulta_user[0][1]
@@ -39,4 +37,15 @@ Então /^o usuário "([^"]*)" existe com email "([^"]*)"$/ do |usuario, email|
   consulta_membership = server.query(texto_consulta_membership)
   server.close
   consulta_membership.length.should == 1
+end
+
+Dado /^que há um usuário$/ do
+  server = SqlServer.obter_aberto
+  inserir = [
+      "DELETE FROM [aspnet_Membership]",
+      "DELETE FROM [aspnet_Users]",
+      "INSERT INTO [aspnet_Users] ([ApplicationId],[UserId],[UserName],[LoweredUserName],[MobileAlias],[IsAnonymous],[LastActivityDate]) VALUES ('c2179066-efa5-4c9f-a53a-5390a7c30927','628a5545-d88d-4407-bb33-b38ae90c56e9',N'Giovanni',N'giovanni',null,0,{ts '2011-03-25 16:42:40.780'});",
+      "INSERT INTO [aspnet_Membership] ([ApplicationId],[UserId],[Password],[PasswordFormat],[PasswordSalt],[MobilePIN],[Email],[LoweredEmail],[PasswordQuestion],[PasswordAnswer],[IsApproved],[IsLockedOut],[CreateDate],[LastLoginDate],[LastPasswordChangedDate],[LastLockoutDate],[FailedPasswordAttemptCount],[FailedPasswordAttemptWindowStart],[FailedPasswordAnswerAttemptCount],[FailedPasswordAnswerAttemptWindowStart],[Comment]) VALUES ('c2179066-efa5-4c9f-a53a-5390a7c30927','628a5545-d88d-4407-bb33-b38ae90c56e9',N'S6Af6XfoW578jwXgcMIBkyBpuI8=',1,N'AE09F72BA97CBBB5EEAAFF',null,N'giggio@giggio.net',N'giggio@giggio.net',N'Pergunta para password answer',N'kZBpH8Cujnzft4npr7kGOdL9Oj4=',1,0,{ts '2011-03-25 16:42:40.780'},{ts '2011-03-25 16:42:40.780'},{ts '2011-03-25 16:42:40.780'},{ts '1753-01-01 00:00:00.000'},0,{ts '1753-01-01 00:00:00.000'},0,{ts '1753-01-01 00:00:00.000'},N'');"
+    ]
+  server.execute_all(inserir)
 end
